@@ -79,7 +79,7 @@ const Slide = () => {
                         <p>{item.descriptionShort}</p>
                         <a href="/" title="Veja mais detalhes do produto >">Veja mais detalhes do produto </a>
                         <div className="count">
-                            <button type="button" onClick={decrease}>-</button>
+                            <button type="button" onClick={decrease} disabled={counter <= 0 ? true : false}>-</button>
                             <span>{counter}</span>
                             <button type="button" onClick={increase}>+</button>
                         </div>
