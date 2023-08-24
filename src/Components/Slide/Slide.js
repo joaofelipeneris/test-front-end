@@ -9,10 +9,7 @@ import "./slide.scss";
 const Slide = () => {
     Modal.setAppElement('#root');
     const [modalIsOpen, setIsOpen] = React.useState(false);
-
     const [modalData, setModalData] = useState([]);
-
-    console.log(modalData)
 
     function abrirModal() {
         setIsOpen(true);
