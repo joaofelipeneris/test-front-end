@@ -10,6 +10,8 @@ const Slide = () => {
     Modal.setAppElement('#root');
     const [modalIsOpen, setIsOpen] = React.useState(false);
     const [modalData, setModalData] = useState([]);
+    const { valueApi } = useContext(Context);
+    const [counter, setCounter] = useState(0);
 
     function abrirModal() {
         setIsOpen(true);
@@ -28,7 +30,13 @@ const Slide = () => {
         slidesToScroll: 1
     };
 
-    const { valueApi } = useContext(Context);
+    const increase = () => {
+        setCounter(count => count + 1);
+    };
+
+    const decrease = () => {
+        setCounter(count => count - 1);
+    };
 
     return (
         <>
@@ -70,6 +78,11 @@ const Slide = () => {
                         <span>{item.price.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</span>
                         <p>{item.descriptionShort}</p>
                         <a href="/" title="Veja mais detalhes do produto >">Veja mais detalhes do produto </a>
+                        <div className="count">
+                            <button type="button" onClick={decrease}>-</button>
+                            <span>{counter}</span>
+                            <button type="button" onClick={increase}>+</button>
+                        </div>
                         <button className="buy" type="button">Comprar</button>
                     </div>
                 </Modal>

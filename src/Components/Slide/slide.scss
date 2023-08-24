@@ -19,6 +19,31 @@
         flex-direction: column;
         justify-content: center;
 
+        .count {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: solid 2px #041E50;
+            border-radius: 3px;
+            padding: 3px 15px;
+            margin-top: 17px;        
+            max-width: 110px;
+
+            button {
+                background: transparent;
+                border: none;
+                outline: 0;
+                font-size: 25px;
+                cursor: pointer;
+            }
+
+            span {
+                font-weight: 500;
+                margin: 0;
+                padding: 0;
+            }
+        }
+
         img {
             margin: 0 auto;
             display: flex;
@@ -85,7 +110,7 @@
             cursor: pointer;
             outline: 0;
             color: #fff;
-            margin-top: 30px;
+            margin-top: 20px;
             max-width: 245px;
             text-transform: uppercase;
         }
