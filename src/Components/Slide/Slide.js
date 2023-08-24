@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Context } from "../../Context/Context";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -9,6 +9,10 @@ import "./slide.scss";
 const Slide = () => {
     Modal.setAppElement('#root');
     const [modalIsOpen, setIsOpen] = React.useState(false);
+
+    const [modalData, setModalData] = useState([]);
+
+    console.log(modalData)
 
     function abrirModal() {
         setIsOpen(true);
@@ -32,8 +36,8 @@ const Slide = () => {
     return (
         <>
             <Slider {...settings}>
-                {valueApi.map((item) =>
-                    <div className="slide-panel">
+                {valueApi.map((item, key) =>
+                    <div className="slide-panel" key={key}>
                         <div className="image">
                             <img src={item.photo} alt={item.productName} />
                         </div>
@@ -43,17 +47,20 @@ const Slide = () => {
                             <h3>{item.price.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</h3>
                             <span>ou 2x de R$ 49,95 sem juros</span>
                             <span className="frete">Frete grátis</span>
-                            <button type="button" onClick={abrirModal}>Comprar</button>
+                            <button type="button" onClick={() => {
+                                setModalData([item])
+                                abrirModal()
+                            }
+                            }>Comprar</button>
                         </div>
                     </div>
                 )}
             </Slider>
-            {valueApi.map((item, key) =>
+            {modalData.map((item) =>
                 <Modal
                     isOpen={modalIsOpen}
                     onRequestClose={fecharModal}
                     contentLabel="Modal"
-                    id={key}
                 >
                     <div className="image">
                         <img src={item.photo} alt={item.productName} />
@@ -64,7 +71,7 @@ const Slide = () => {
                         </div>
                         <h2>{item.productName}</h2>
                         <span>{item.price.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}</span>
-                        <p>{item.descriptionShort}</p>   
+                        <p>{item.descriptionShort}</p>
                         <a href="/" title="Veja mais detalhes do produto >">Veja mais detalhes do produto </a>
                         <button className="buy" type="button">Comprar</button>
                     </div>
