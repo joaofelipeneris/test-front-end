@@ -88,6 +88,13 @@
             }
         }
 
+        .slick-next:before {
+            content:url("./images/next.png") !important;
+        }
+        .slick-prev:before {
+            content:url("./images/prev.png") !important;
+        }
+
         .slick-slider .slick-track, .slick-slider .slick-list {
             margin: 15px 0;
             margin-left: 15px;

@@ -1,0 +1,64 @@
+.Card {
+    display: block;
+
+    .card-group {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        .panel {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            height: 100%;
+            min-height: 350px;
+            max-width: 574px;
+            background-color: #ccc;
+            border-radius: 10px;
+            background: url("./images/loja.png");
+    
+            &::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 85.04%);
+            }
+    
+            .infos {
+                bottom: 30px;
+                left: 30px;
+                position: absolute;
+                z-index: 1;
+    
+                h2 {
+                    font-size: 40px;
+                    font-weight: 700;
+                    line-height: 60px;
+                    color: #fff;
+                }
+    
+                p {
+                    font-size: 16px;
+                    font-weight: 400;
+                    line-height: 24px;
+                    color: #fff; 
+                    padding-bottom: 30px;
+                }
+    
+                button {
+                    font-weight: 900;
+                    font-size: 16px;
+                    line-height: 24px;
+                    color: #fff;
+                    border-radius: 10px;
+                    background-color: #F71963;
+                    border: 0;
+                    outline: 0;
+                    padding: 7px 35px;                
+                }
+            }
+        }
+    }
+}

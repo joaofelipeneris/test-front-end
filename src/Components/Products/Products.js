@@ -98,7 +98,7 @@ export default class SimpleSlider extends Component {
                             </li>
                         </ul>
 
-                        <Slide />                        
+                        <Slide />                     
                     </div>
                 </div>
             </section>
