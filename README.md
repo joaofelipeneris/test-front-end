@@ -8,10 +8,10 @@
 
 OBS: Caso estiver utilizando o Sistema operacional Windows, antes de todo o processo rodar o seguinte comando: npm install --global yarn
 
-# dependências utilizadas
+# Dependências utilizadas
 
 Axios
  - npm install axios
- 
+
 Sass
  - npm install -g sass
